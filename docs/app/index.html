@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPA demo — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/">Home</a>
+      <a href="/test-site-counter/programs/">Programs</a>
+      <a href="/test-site-counter/techolympics/">TechOlympics</a>
+      <a href="/test-site-counter/about/">About</a>
+      <a href="/test-site-counter/app/" class="on" aria-current="page">SPA demo</a>
+      <a href="/test-site-counter/slow/">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>SPA demo</h1>
+  <p class="lede">Client-side routing, tracked without a page reload.</p>
+  
+      <p>These buttons change the URL with <code>history.pushState()</code> and
+      never reload the page. The tracker patches pushState, so each one is
+      recorded as its own pageview.</p>
+      <p>Only the <em>first</em> view carries the document's load timings. The
+      later ones did not load anything, so reporting a TTFB for them would be
+      attributing the landing page's numbers to a route that never touched the
+      network.</p>
+      <nav class="routes">
+        <button data-route="/app/dashboard">/app/dashboard</button>
+        <button data-route="/app/settings">/app/settings</button>
+        <button data-route="/app/billing">/app/billing</button>
+      </nav>
+      <div class="panel"><strong>Current route:</strong> <span id="route">/app/</span></div>
+      <p><button id="lag" class="danger">Block the main thread for 300ms</button>
+      &nbsp;registers a slow interaction, which is what INP measures.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+<script>
+      document.querySelectorAll('[data-route]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          history.pushState({}, '', b.dataset.route);
+          document.getElementById('route').textContent = b.dataset.route;
+          document.title = b.dataset.route + ' — Counter Test Site';
+        });
+      });
+      document.getElementById('lag').addEventListener('click', function () {
+        var end = Date.now() + 300;
+        while (Date.now() < end) { /* deliberately janky */ }
+        this.textContent = 'Blocked for 300ms — check INP';
+      });</script>
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>

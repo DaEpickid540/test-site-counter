@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/">Home</a>
+      <a href="/test-site-counter/programs/" class="on" aria-current="page">Programs</a>
+      <a href="/test-site-counter/techolympics/">TechOlympics</a>
+      <a href="/test-site-counter/about/">About</a>
+      <a href="/test-site-counter/app/">SPA demo</a>
+      <a href="/test-site-counter/slow/">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Programs</h1>
+  <p class="lede">A normal content page.</p>
+  <p>Nothing clever happens here. It exists so the Pages breakdown has
+      more than one row in it.</p>
+      <p>Open this page directly in a fresh tab and it is recorded as direct
+      traffic. Arrive by clicking the nav link and it is an internal navigation,
+      which the tracker deliberately does <em>not</em> record as a referrer —
+      your own site is not an acquisition source.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/" class="on" aria-current="page">Home</a>
+      <a href="/test-site-counter/programs/">Programs</a>
+      <a href="/test-site-counter/techolympics/">TechOlympics</a>
+      <a href="/test-site-counter/about/">About</a>
+      <a href="/test-site-counter/app/">SPA demo</a>
+      <a href="/test-site-counter/slow/">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Home</h1>
+  <p class="lede">A real website on the real internet, built to be measured.</p>
+  
+      <p>Every link in the nav is a separate page served by GitHub Pages, and
+      every one of them reports to an IA-Counter instance running somewhere
+      else entirely. That is the whole point of this site: it exercises the
+      real cross-origin path, over HTTPS, from a real CDN.</p>
+      <div class="cards">
+        <a class="card" href="/test-site-counter/programs/"><h3>Programs</h3><p>An ordinary page, an ordinary pageview.</p></a>
+        <a class="card" href="/test-site-counter/app/"><h3>SPA demo</h3><p>Client-side routes with no page reload.</p></a>
+        <a class="card" href="/test-site-counter/slow/"><h3>Slow page</h3><p>Deliberately poor Core Web Vitals.</p></a>
+      </div>
+      <p class="note">Open the dashboard alongside this and click around. Pageviews
+      land within a couple of seconds.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>

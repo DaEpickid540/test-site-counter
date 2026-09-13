@@ -1,0 +1,197 @@
+/* Counter Test Site — palette borrowed from interalliance.org */
+
+:root {
+  color-scheme: light;
+  --violet: #615498;
+  --violet-light: #6d66ac;
+  --turquoise: #7af6c5;
+  --ink: #2b2725;
+  --paper: #fffcf9;
+  --ground: #f2f0f7;
+  --muted: #665f73;
+  --faint: #736c7f;
+  --line: #e4e0ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ink: #fffcf9;
+    --paper: #2b2725;
+    --ground: #211e1c;
+    --muted: #aca49e;
+    --faint: #9a8f88;
+    --line: #3d3733;
+    --violet: #9a91d6;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ----------------------------------------------------------------- header */
+
+header {
+  background: #615498;
+  color: #fffcf9;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 17px;
+  color: #fffcf9;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand span { color: #7af6c5; }
+
+nav.main { display: flex; gap: 3px; flex-wrap: wrap; }
+
+nav.main a {
+  color: #fffcf9;
+  text-decoration: none;
+  padding: 5px 11px;
+  border-radius: 7px;
+  font-size: 14px;
+  opacity: 0.82;
+}
+
+nav.main a:hover { background: rgba(255, 255, 255, 0.15); opacity: 1; }
+
+nav.main a.on {
+  background: #7af6c5;
+  color: #2b2725;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------- main */
+
+main { max-width: 720px; margin: 0 auto; padding: 40px 24px 24px; }
+
+h1 { font-size: 33px; letter-spacing: -0.025em; margin: 0 0 6px; line-height: 1.2; }
+
+.lede { color: var(--muted); font-size: 17.5px; margin: 0 0 30px; }
+
+a { color: var(--violet); }
+
+code {
+  background: var(--line);
+  color: var(--ink);
+  padding: 1.5px 5px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.note {
+  border-left: 3px solid var(--violet);
+  padding: 2px 0 2px 14px;
+  color: var(--muted);
+  font-size: 14.5px;
+  margin-top: 26px;
+}
+
+.btn-link { font-weight: 600; text-decoration: none; }
+.btn-link:hover { text-decoration: underline; }
+
+/* ------------------------------------------------------------------ cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.card:hover { border-color: var(--violet); }
+.card h3 { margin: 0 0 5px; font-size: 15px; color: var(--violet); }
+.card p { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* --------------------------------------------------------------- controls */
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: var(--violet);
+  color: #fffcf9;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  button { color: #241f33; }
+}
+
+button:hover { filter: brightness(1.1); }
+button.danger { background: #bb2d45; color: #fff; }
+
+nav.routes { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0; }
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.late-banner {
+  height: 170px;
+  background: #615498;
+  color: #fffcf9;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  text-align: center;
+  padding: 16px;
+  margin: 18px 0;
+}
+
+/* ----------------------------------------------------------------- footer */
+
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 13.5px;
+}
+
+footer p { margin: 0 0 6px; }
+footer .tiny { font-size: 12.5px; }
+footer code { font-size: 12px; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 27px; }
+  main { padding: 28px 18px 18px; }
+  header { padding: 12px 18px; gap: 12px; }
+}

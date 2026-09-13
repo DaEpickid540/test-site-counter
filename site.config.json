@@ -1,0 +1,8 @@
+{
+  "collectorUrl": "https://interalliance-web-traffic.onrender.com",
+  "siteKey": "PASTE_SITE_KEY_FROM_DASHBOARD",
+  "counterRepo": "DaEpickid540/IA-Counter",
+  "_basePath": "Set to \"/test-site-counter\" for a GitHub project page. Leave empty for a custom domain or a <user>.github.io repo.",
+  "basePath": "/test-site-counter",
+  "customDomain": null
+}

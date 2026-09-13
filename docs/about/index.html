@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/">Home</a>
+      <a href="/test-site-counter/programs/">Programs</a>
+      <a href="/test-site-counter/techolympics/">TechOlympics</a>
+      <a href="/test-site-counter/about/" class="on" aria-current="page">About</a>
+      <a href="/test-site-counter/app/">SPA demo</a>
+      <a href="/test-site-counter/slow/">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>About</h1>
+  <p class="lede">Short page. Quick to read, quick to leave.</p>
+  <p>If you open this page and immediately close the tab, it counts as a
+      bounce — a visit where exactly one page was seen that day.</p>
+      <p>The time-on-page beacon fires when the tab is hidden or closed, so
+      switching to another tab is what actually commits the duration. Sitting here
+      reading does not report anything until you leave.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>

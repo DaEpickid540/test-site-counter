@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechOlympics — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/">Home</a>
+      <a href="/test-site-counter/programs/">Programs</a>
+      <a href="/test-site-counter/techolympics/" class="on" aria-current="page">TechOlympics</a>
+      <a href="/test-site-counter/about/">About</a>
+      <a href="/test-site-counter/app/">SPA demo</a>
+      <a href="/test-site-counter/slow/">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>TechOlympics</h1>
+  <p class="lede">Campaign tracking, without leaking the query string.</p>
+  <p>Add UTM parameters to this URL and reload. The recorded path stays
+      clean at <code>/techolympics/</code>, but the campaign is captured and shows
+      up under <strong>Referrers &rarr; Source</strong> in the dashboard.</p>
+      <p><a class="btn-link" href="/test-site-counter/techolympics/?utm_source=newsletter&utm_medium=email&utm_campaign=live-test">
+      Reload with a campaign attached &rarr;</a></p>
+      <p class="note">Query strings are stripped in the browser before anything is
+      sent, because they leak email addresses, tokens and search terms more often
+      than people expect. UTM parameters are the deliberate exception.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>

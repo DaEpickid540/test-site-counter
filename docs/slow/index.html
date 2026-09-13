@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slow page — Counter Test Site</title>
+<meta name="description" content="A test site for IA-Counter, a privacy-first web analytics tool.">
+<link rel="icon" href="/test-site-counter/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/test-site-counter/style.css">
+<script>
+      (function () {
+        var end = Date.now() + 600;
+        while (Date.now() < end) { /* stall first paint */ }
+      })();</script>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/test-site-counter/">COUNTER<span>//</span>TEST</a>
+  <nav class="main">
+      <a href="/test-site-counter/">Home</a>
+      <a href="/test-site-counter/programs/">Programs</a>
+      <a href="/test-site-counter/techolympics/">TechOlympics</a>
+      <a href="/test-site-counter/about/">About</a>
+      <a href="/test-site-counter/app/">SPA demo</a>
+      <a href="/test-site-counter/slow/" class="on" aria-current="page">Slow page</a>
+      <a href="/test-site-counter/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Slow page</h1>
+  <p class="lede">Bad on purpose, so the Core Web Vitals cards have something to say.</p>
+  <p>This page blocks rendering for about 600ms before it paints, then
+      drops an unsized banner in a second later. That gives you a genuinely poor
+      LCP and a real layout shift.</p>
+      <div id="late"></div>
+      <p>This paragraph is what gets shoved down the page when the banner arrives.
+      That downward shove is exactly what CLS measures — content moving under a
+      reader who has already started reading.</p>
+      <p class="note">TTFB will still look fine here. This is served by GitHub's
+      CDN, and no amount of client-side sabotage can make a CDN slow to respond.</p>
+</main>
+
+<footer>
+  <p>Not a real organisation. This site exists only to generate pageviews for
+  <a href="https://github.com/DaEpickid540/IA-Counter">IA-Counter</a>.</p>
+  <p class="tiny">No cookies are set and nothing is stored in your browser.
+  Reporting to <code>https://interalliance-web-traffic.onrender.com</code>.</p>
+</footer>
+<script>
+      setTimeout(function () {
+        var d = document.createElement('div');
+        d.className = 'late-banner';
+        d.textContent = 'Late banner — everything below this just moved';
+        document.getElementById('late').appendChild(d);
+      }, 1000);</script>
+
+<!-- This single tag is the entire installation. -->
+<script defer src="https://interalliance-web-traffic.onrender.com/ia.js" data-site="PASTE_SITE_KEY_FROM_DASHBOARD"></script>
+</body>
+</html>
